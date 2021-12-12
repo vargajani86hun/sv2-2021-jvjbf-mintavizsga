@@ -21,4 +21,20 @@ public class Fish {
     public void feed() {
         weight++;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public boolean hasMemoryLoss() {
+        return sortTermMemoryLoss;
+    }
 }
