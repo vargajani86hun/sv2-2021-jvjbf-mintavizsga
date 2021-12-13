@@ -1,26 +1,23 @@
 package aquarium;
 
-public class Fish {
+public abstract class Fish {
     private String name;
-    private int weight;
+    protected int weight;
     private String color;
-    private boolean sortTermMemoryLoss;
 
-    public Fish(String name, int weight, String color, boolean sortTermMemoryLoss) {
+
+    public Fish(String name, int weight, String color) {
         this.name = name;
         this.weight = weight;
         this.color = color;
-        this.sortTermMemoryLoss = sortTermMemoryLoss;
     }
 
     public String getStatus() {
         return name + ", weight: " + weight + ", color: " + color +
-                ", short-term memory loss: " + sortTermMemoryLoss;
+                ", short-term memory loss: " + hasMemoryLoss();
     }
 
-    public void feed() {
-        weight++;
-    }
+    public abstract void feed();
 
     public String getName() {
         return name;
@@ -34,7 +31,5 @@ public class Fish {
         return color;
     }
 
-    public boolean hasMemoryLoss() {
-        return sortTermMemoryLoss;
-    }
+    public abstract boolean hasMemoryLoss();
 }
